@@ -46,29 +46,33 @@
   };
 </script>
 
-  <meta name="description" content="小白学习前端之路">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Sanbai  Blog">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;index.html">
+  <meta name="description" content="JavaScript 的 async&#x2F;awiat的基本用法">
+<meta property="og:type" content="article">
+<meta property="og:title" content="async  await基本用法">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;12&#x2F;22&#x2F;async%20%20await%E5%9F%BA%E6%9C%AC%E7%94%A8%E6%B3%95&#x2F;index.html">
 <meta property="og:site_name" content="Sanbai  Blog">
-<meta property="og:description" content="小白学习前端之路">
+<meta property="og:description" content="JavaScript 的 async&#x2F;awiat的基本用法">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2019-12-22T11:54:03.345Z">
+<meta property="article:modified_time" content="2019-12-22T13:25:08.321Z">
 <meta property="article:author" content="Sanbai">
+<meta property="article:tag" content="JavaScript">
+<meta property="article:tag" content="异步">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://yoursite.com/">
+<link rel="canonical" href="http://yoursite.com/2019/12/22/async%20%20await%E5%9F%BA%E6%9C%AC%E7%94%A8%E6%B3%95/">
 
 
 <script id="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
-    isHome: true,
-    isPost: false
+    isHome: false,
+    isPost: true
   };
 </script>
 
-  <title>Sanbai  Blog</title>
+  <title>async  await基本用法 | Sanbai  Blog</title>
   
 
 
@@ -181,10 +185,10 @@
             
 
   <div class="posts-expand">
-        
+      
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/12/22/async%20%20await%E5%9F%BA%E6%9C%AC%E7%94%A8%E6%B3%95/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -198,8 +202,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/12/22/async%20%20await%E5%9F%BA%E6%9C%AC%E7%94%A8%E6%B3%95/" class="post-title-link" itemprop="url">async  await基本用法</a>
+          async  await基本用法
         </h1>
 
         <div class="post-meta">
@@ -231,6 +234,13 @@
             </span>
 
           
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
             <div class="post-description">JavaScript 的 async/awiat的基本用法</div>
 
         </div>
@@ -242,132 +252,99 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="async-awite"><a href="#async-awite" class="headerlink" title="async awite"></a>async awite</h1><ul>
+        <h1 id="async-awite"><a href="#async-awite" class="headerlink" title="async awite"></a>async awite</h1><ul>
 <li><p>async/await从字面意思上很好理解，async是异步的意思，await有等待的意思，而两者的用法上也是如此。async用于申明一个function是异步的，而await 用于等待一个异步方法执行完成。</p>
 </li>
 <li><p>另外还有一个很有意思的语法规定，await 只能出现在 async 函数中，否则会报语法错误。</p>
 </li>
 </ul>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2019/12/22/async%20%20await%E5%9F%BA%E6%9C%AC%E7%94%A8%E6%B3%95/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
+<a id="more"></a>
 
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
+<h1 id="async-的作用"><a href="#async-的作用" class="headerlink" title="async 的作用"></a>async 的作用</h1><p>async 函数（包含函数语句、函数表达式、Lambda表达式）会返回一个 Promise 对象，如果在函数中 return 一个表达式，async 会把这个表达式通过 Promise.resolve() 封装成 Promise 对象,可以使用then方法添加回调函数。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">async function test()&#123;</span><br><span class="line">    return &#39;hello wold&#39;;</span><br><span class="line">&#125;</span><br><span class="line">let result &#x3D; test();</span><br><span class="line">console.log(result)</span><br><span class="line">result.then(r &#x3D;&gt; &#123;</span><br><span class="line">    console.log(r);   hello wold</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>如果 async 函数没有返回值，它会返回 Promise.resolve(undefined)。</p>
+</blockquote>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"> async function test()&#123;</span><br><span class="line">    return ;</span><br><span class="line">&#125;</span><br><span class="line">let result &#x3D; test();</span><br><span class="line">console.log(result)  &#x2F;&#x2F; Promise &#123; undefined &#125;</span><br><span class="line">result.then(r &#x3D;&gt; &#123;</span><br><span class="line">    console.log(r);   undefined</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/12/17/%E5%90%8C%E6%AD%A5%E5%92%8C%E5%BC%82%E6%AD%A5/">
+<p>感觉和普通函数没什么区别，只是包裹里一层 promise 和 关键字 async 。看来所有的奥秘都在 awiat 。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">function test(s)&#123;</span><br><span class="line">    return new Promise(resole &#x3D;&gt; &#123;</span><br><span class="line">        resole(s);</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br><span class="line">let result &#x3D; test(&quot;hello wold&quot;);</span><br><span class="line">console.log(result)  &#x2F;&#x2F;Promise &#123; &#39;hello wold&#39; &#125;</span><br><span class="line">result.then(r &#x3D;&gt; &#123;</span><br><span class="line">    console.log(r);    &#x2F;&#x2F;hello wold</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatat.jpg">
-      <meta itemprop="name" content="Sanbai">
-      <meta itemprop="description" content="小白学习前端之路">
-    </span>
 
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Sanbai  Blog">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/12/17/%E5%90%8C%E6%AD%A5%E5%92%8C%E5%BC%82%E6%AD%A5/" class="post-title-link" itemprop="url">同步和异步</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2019-12-17 21:03:39" itemprop="dateCreated datePublished" datetime="2019-12-17T21:03:39+08:00">2019-12-17</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-12-22 21:01:56" itemprop="dateModified" datetime="2019-12-22T21:01:56+08:00">2019-12-22</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/JavaScript/" itemprop="url" rel="index">
-                    <span itemprop="name">JavaScript</span>
-                  </a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/JavaScript/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index">
-                    <span itemprop="name">学习笔记</span>
-                  </a>
-                </span>
-            </span>
-
-          
-            <div class="post-description">JavaScript 的任务队列，以及同步任务和异步任务的执行顺序。</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="task-queues-任务队列"><a href="#task-queues-任务队列" class="headerlink" title="task queues(任务队列))"></a>task queues(任务队列))</h1><ul>
-<li><p>所有任务可以分成两种，一种是同步任务（synchronous），另一种是异步任务（asynchronous）。 (ES5的是同步异步 ，ES6的是宏微任务）。</p>
+<h1 id="await"><a href="#await" class="headerlink" title="await"></a>await</h1><ul>
+<li><p>await是 async wait 的意思，wait的是异步数据的返回值，并把数据data返回。相当于阻塞了代码，使代码顺序执行，表现和同步代码几乎一模一样。</p>
+</li>
+<li><p>当函数执行的时候，一旦遇到 await 表达式，等待 await 后面的表达式运行完并且有了返回结果之后，才继续执行函数体内后面的语句，以达到同步的效果。await 在写法上也是同步的。</p>
+</li>
+<li><p>await 后面的表达式可以是普通函数调用或者变量，跟着什么是什么，没有特殊限定。</p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">function getPromise()&#123;</span><br><span class="line">    return Promise.resolve(Promise);</span><br><span class="line">&#125;</span><br><span class="line">async function test(s)&#123;</span><br><span class="line">    let m &#x3D; await s;</span><br><span class="line">   console.log(typeof m);</span><br><span class="line">&#125;</span><br><span class="line">test(123);  &#x2F;&#x2F;number</span><br><span class="line">test(&#39;hello wold&#39;);  &#x2F;&#x2F;string</span><br><span class="line">test(getPromise());  &#x2F;&#x2F;function</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>有了这个async关键字，只是表明里面可能有异步过程，里面可以有await关键字。当然，全部是同步代码也没关系。当然，这时候这个async关键字就显得多余了。不是不能加，而是不应该加。</p>
+</blockquote>
+<h1 id="异常处理"><a href="#异常处理" class="headerlink" title="异常处理"></a>异常处理</h1><p>await 只关心异步过程成功的消息 resolve(data)，拿到相应的数据data。至于失败消息reject(error)，不关心，不处理。<br>当然对于错误消息的处理，有以下几种方法供选择：</p>
 <ul>
-<li>同步任务指的是，在主线程上排队执行的任务，只有前一个任务执行完毕，才能执行后一个任务；</li>
-<li>异步任务指的是，不进入主线程、而进入”任务队列”（task queue）的任务，只有”任务队列”通知主线程，某个异步任务可以执行了，该任务才会进入主线程执行。（每一个任务有一个或多个回调函数（callback），前一个任务结束后，不是执行后一个任务，而是执行回调函数，后一个任务则是不等前一个任务结束就执行，所以程序的执行顺序与任务的排列顺序是不一致的、异步的。）
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2019/12/17/%E5%90%8C%E6%AD%A5%E5%92%8C%E5%BC%82%E6%AD%A5/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
+<li><p>像同步代码一样，放在一个try…catch结构中</p>
+</li>
+<li><p>让 await 后面的 Promise对象自己catch</p>
+</li>
+<li><p>也可以让外面的async函数返回的Promise对象统一catch</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">async function f() &#123;</span><br><span class="line">    try &#123;</span><br><span class="line">    await Promise.reject(&#39;出错了 try catch&#39;);</span><br><span class="line">    &#125; catch(e) &#123; </span><br><span class="line">        console.log(e)  &#x2F;&#x2F;出错了 try catch</span><br><span class="line">    &#125;</span><br><span class="line">    return await Promise.resolve(&#39;hello try catch&#39;); </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">f()</span><br><span class="line">.then(v &#x3D;&gt; console.log(v));  &#x2F;&#x2F;hello try catch</span><br><span class="line"></span><br><span class="line">async function ff() &#123;</span><br><span class="line">    await Promise.reject(&#39;出错了 catch&#39;)  </span><br><span class="line">        .catch(e &#x3D;&gt; console.log(e));   &#x2F;&#x2F;出错了 catch</span><br><span class="line">    return await Promise.resolve(&#39;hello catch&#39;); &#x2F;&#x2F;hello catch</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">ff()</span><br><span class="line">.then(v &#x3D;&gt; console.log(v))  &#x2F;&#x2F;hello catch</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">async function fff() &#123;</span><br><span class="line">    await new Promise(function (resolve, reject) &#123;</span><br><span class="line">    throw new Error(&#39;出错了&#39;);</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br><span class="line">  </span><br><span class="line">fff().then(v &#x3D;&gt; console.log(v)).catch(e &#x3D;&gt; console.log(e))  &#x2F;&#x2F;Error: 出错了</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><ul>
+<li>async函数的返回值是一个Promise对象，这个是和普通函数本质不同的地方。这也是使用时重点注意的地方。</li>
+</ul>
+<ul>
+<li><p>async函数内部只要有一个异步过程发生错误，整个执行过程就中断，这个返回的Promise对象的catch就能抓到这个错误。</p>
+</li>
+<li><p>async函数执行和普通函数一样，函数名带个()就可以了，参数个数随意，没有限制；也需要有async关键字。只是返回值是一个Promise对象，可以用then函数得到返回值，用catch抓去整个流程中发生的错误。</p>
+</li>
+</ul>
+<p>转载和引用</p>
+<blockquote>
+<p><a href="https://segmentfault.com/a/1190000007535316" target="_blank" rel="noopener">理解 JavaScript 的 async/await</a></p>
+</blockquote>
+<blockquote>
+<p><a href="http://es6.ruanyifeng.com/#docs/async" target="_blank" rel="noopener">ECMAScript 6 入门</a></p>
+</blockquote>
+<blockquote>
+<p><a href="https://www.jianshu.com/p/ffa5cbe9ab29" target="_blank" rel="noopener">JavaScript：async/await的基础用法</a></p>
+</blockquote>
+
     </div>
 
     
     
     
+
       <footer class="post-footer">
-        <div class="post-eof"></div>
+          <div class="post-tags">
+              <a href="/tags/JavaScript/" rel="tag"># JavaScript</a>
+              <a href="/tags/%E5%BC%82%E6%AD%A5/" rel="tag"># 异步</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2019/12/17/%E5%90%8C%E6%AD%A5%E5%92%8C%E5%BC%82%E6%AD%A5/" rel="prev" title="同步和异步">
+      <i class="fa fa-chevron-left"></i> 同步和异步
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
       </footer>
+    
   </article>
   
   
   
 
   </div>
-
-  
-
 
 
           </div>
@@ -418,6 +395,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#async-awite"><span class="nav-number">1.</span> <span class="nav-text">async awite</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#async-的作用"><span class="nav-number">2.</span> <span class="nav-text">async 的作用</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#await"><span class="nav-number">3.</span> <span class="nav-text">await</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#异常处理"><span class="nav-number">4.</span> <span class="nav-text">异常处理</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#总结"><span class="nav-number">5.</span> <span class="nav-text">总结</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
