@@ -2,9 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://frontwhite.xyz/2020/01/03/Hexo%20next%E4%B8%BB%E9%A2%98%E9%85%8D%E7%BD%AE/</loc>
+    
+    <lastmod>2020-01-19T12:13:53.187Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://frontwhite.xyz/2020/01/17/vue%20%E6%8F%92%E6%A7%BD/</loc>
     
-    <lastmod>2020-01-18T04:07:35.023Z</lastmod>
+    <lastmod>2020-01-18T06:48:42.657Z</lastmod>
     
   </url>
   
@@ -33,13 +40,6 @@
     <loc>http://frontwhite.xyz/2020/01/13/tools/tools/</loc>
     
     <lastmod>2020-01-13T06:53:24.462Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://frontwhite.xyz/2020/01/03/Hexo%20next%E4%B8%BB%E9%A2%98%E9%85%8D%E7%BD%AE/</loc>
-    
-    <lastmod>2020-01-12T15:54:00.138Z</lastmod>
     
   </url>
   
